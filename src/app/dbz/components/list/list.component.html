@@ -1,0 +1,15 @@
+<h4>{{title}}</h4>
+<ul class="list-group"> 
+    <li *ngFor="let item of items; let i = index; let isFirst = first; let isLast=last "  
+        class="list-group-item d-flex justify-space-between"
+        [ngClass]="{            
+            'list-group-item-primary': isFirst, 
+            'list-group-item-danger': isLast
+            }"
+    >
+        <div>
+            <span class="text-primary" >{{i + 1}} .</span> {{item.name}} - <strong>{{item.power}}</strong>
+        </div>
+       <button (click)="onClickDelete(item.id)" class="btn btn-danger btn-small">X</button>
+    </li> 
+</ul>
